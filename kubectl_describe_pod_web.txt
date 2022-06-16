@@ -1,0 +1,49 @@
+Name:         web
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Thu, 16 Jun 2022 19:52:38 +0300
+Labels:       env=test
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.3
+IPs:
+  IP:  172.17.0.3
+Containers:
+  webapp:
+    Container ID:   docker://8f10ca366c4718991ac6eb6f98e528c715e1d8931496f299d26b8b296856ae9a
+    Image:          lolonim/web:1.0.0
+    Image ID:       docker-pullable://lolonim/web@sha256:925004d60304953fcdbbcb717d6e8c00c927b8902dbe44780f9a8505b9dc88ca
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Thu, 16 Jun 2022 19:52:39 +0300
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-qbcpq (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-qbcpq:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  43s   default-scheduler  Successfully assigned default/web to minikube
+  Normal  Pulled     43s   kubelet            Container image "lolonim/web:1.0.0" already present on machine
+  Normal  Created    43s   kubelet            Created container webapp
+  Normal  Started    43s   kubelet            Started container webapp
