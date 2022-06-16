@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Files</title>
+</head>
+<body>
+<h1>Файлы в папке App</h1>
+<table th:each="fileName : ${files}">
+    <a th:href="${fileName}"><tr th:text="${fileName}"></tr></a>
+</table>
+</body>
+</html>
