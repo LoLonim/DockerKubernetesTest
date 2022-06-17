@@ -12,5 +12,5 @@ USER ${USER}
 COPY --chown=$USER:$USER hello.html /app
 WORKDIR /app
 EXPOSE 8000
-COPY ${JAR_FILE} app.jar  
-ENTRYPOINT ["java","-jar","app.jar"] 
+COPY --chown=$USER:$USER ${JAR_FILE} app.jar  
+CMD ["java", "-jar", "app.jar"] 
